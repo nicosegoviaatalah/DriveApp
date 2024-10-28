@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Términos y Condiciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="aceptarTerminos()">Aceptar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="terminos-content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¡Bienvenido a los Términos y Condiciones!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Estos términos y condiciones son importantes y deben ser leídos con atención. Al aceptar, estás de acuerdo con nuestras políticas de uso.
+      </p>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h3>1. Uso de la Aplicación</h3>
+            <p>
+              La aplicación debe ser utilizada de acuerdo a las normas establecidas. Nos reservamos el derecho de suspender el acceso si se detectan actividades inapropiadas.
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>2. Privacidad de Datos</h3>
+            <p>
+              Nos comprometemos a proteger la privacidad de tus datos. Solo se utilizarán para mejorar la experiencia en la aplicación.
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>3. Limitación de Responsabilidad</h3>
+            <p>
+              No nos hacemos responsables de daños directos o indirectos que puedan derivarse del uso de la aplicación.
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>4. Cambios en los Términos</h3>
+            <p>
+              Los términos y condiciones pueden ser modificados en cualquier momento, sin previo aviso. Asegúrate de revisarlos regularmente.
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-checkbox [(ngModel)]="acepto" slot="start"></ion-checkbox>
+      <ion-label>Acepto los términos y condiciones.</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

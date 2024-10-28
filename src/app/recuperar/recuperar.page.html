@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recuperar Contraseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Restablecer tu contraseña</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="email" type="email" label="Correo Electrónico" placeholder="Ingresa tu correo"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="full" (click)="sendRecovery()">Enviar</ion-button>
+      <ion-label *ngIf="mensaje">{{ mensaje }}</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

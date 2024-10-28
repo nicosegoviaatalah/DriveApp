@@ -1,0 +1,98 @@
+/* Estilos generales para el contenedor */
+#container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Estilo del título de bienvenida */
+  ion-card-title h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #003366; /* Azul oscuro */
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo del subtítulo */
+  ion-card-subtitle {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #666666;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el formulario */
+  ion-item {
+    margin-top: 10px;
+  }
+  
+  ion-label {
+    color: #333333;
+  }
+  
+  ion-input {
+    --padding-start: 10px;
+    font-size: 1em;
+  }
+  
+  /* Estilo para el botón de Aceptar */
+  ion-button[color="success"] {
+    margin-top: 20px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    --background: #FFD700; /* Amarillo */
+    --color: #000000; /* Texto negro */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  /* Efecto de hover y clic para el botón de Aceptar */
+  ion-button[color="success"]:hover {
+    transform: scale(1.05);
+  }
+  
+  ion-button[color="success"]:active {
+    transform: scale(0.95);
+  }
+
+  /* Estilo del menú */
+ion-menu::part(backdrop) {
+  background-color: rgba(214, 200, 0, 0.18); /* Fondo magenta semitransparente */
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0; /* Bordes redondeados en el lado derecho */
+  box-shadow: 4px 0px 16px rgba(214, 200, 0, 0.18); /* Sombra para darle profundidad */
+}
+
+/* Estilo de los ítems del menú */
+ion-item {
+  --color: #ffffff; /* Texto blanco */
+  --background: transparent;
+}
+
+ion-item:hover {
+  --background: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente al pasar el mouse */
+}
+
+/* Estilo del contenido principal */
+.ion-padding {
+  background-color: #f2f2f2; /* Fondo gris claro */
+}
+
+ion-title {
+  color: #ffd700; /* Título en amarillo */
+}
+
+ion-card-title, ion-card-subtitle {
+  color: #003366; /* Azul oscuro para los títulos */
+}
+
+ion-card {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+  
