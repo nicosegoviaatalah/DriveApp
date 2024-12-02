@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
+import { AlertController } from '@ionic/angular';
 
 declare var google: any;
 
@@ -18,25 +19,21 @@ export class MapaPage implements AfterViewInit {
   searchQuery: string = '';
   origen: any;
   destino: any;
+  tiempoEstimado: string = '';
+  costoEstimado: number = 0;
 
-  constructor() {}
+  constructor(private alertController: AlertController) {}
 
   ngAfterViewInit() {
     this.loadMap();
     this.autocompleteService = new google.maps.places.AutocompleteService();
   }
 
-
-
   logout() {
     console.log('Desconectado');
   }
-  
-
-
 
   async loadMap() {
-
     const position = await Geolocation.getCurrentPosition();
     const latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
@@ -47,7 +44,7 @@ export class MapaPage implements AfterViewInit {
     };
 
     this.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    this.directionsRenderer.setMap(this.map); 
+    this.directionsRenderer.setMap(this.map);
 
     this.marker = new google.maps.Marker({
       position: latLng,
@@ -56,19 +53,20 @@ export class MapaPage implements AfterViewInit {
       draggable: true,
     });
 
-
     this.origen = latLng;
   }
 
   buscarLugar(event: any) {
     const input = event.target.value;
-
+  
     if (input && input.length > 3) {
       this.autocompleteService.getPlacePredictions(
         { input, types: ['geocode'] },
         (predictions: any, status: string) => {
           if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
             this.predictions = predictions;
+          } else {
+            console.error('Error al obtener predicciones:', status);
           }
         }
       );
@@ -76,7 +74,7 @@ export class MapaPage implements AfterViewInit {
       this.predictions = [];
     }
   }
-
+  
   seleccionarLugar(prediction: any) {
     const placesService = new google.maps.places.PlacesService(this.map);
 
@@ -90,23 +88,39 @@ export class MapaPage implements AfterViewInit {
     });
   }
 
-
   trazarRuta(origen: any, destino: any) {
     const request = {
       origin: origen,
       destination: destino,
-      travelMode: google.maps.TravelMode.DRIVING, // cambiar a WALKING, BICYCLING, etc.
+      travelMode: google.maps.TravelMode.DRIVING, 
     };
 
-    this.directionsService.route(request, (result: any, status: string) => {
+    this.directionsService.route(request, async (result: any, status: string) => {
       if (status === google.maps.DirectionsStatus.OK) {
         this.directionsRenderer.setDirections(result);
+
+     
+        const route = result.routes[0].legs[0];
+        this.tiempoEstimado = route.duration.text; 
+        const distanciaKm = route.distance.value / 1000; 
+        this.costoEstimado = distanciaKm * 2; 
+
+   
+        const alert = await this.alertController.create({
+          header: 'Viaje Aceptado',
+          message: `
+            <p><strong>Distancia:</strong> ${route.distance.text}</p>
+            <p><strong>Tiempo estimado:</strong> ${this.tiempoEstimado}</p>
+            <p><strong>Costo estimado:</strong> $${this.costoEstimado.toFixed(2)}</p>
+          `,
+          buttons: ['OK'],
+        });
+        await alert.present();
       } else {
         console.error('Error al trazar la ruta:', status);
       }
     });
   }
-
 
   async centrarUbicacion() {
     const position = await Geolocation.getCurrentPosition();
@@ -114,7 +128,6 @@ export class MapaPage implements AfterViewInit {
 
     this.map.setCenter(latLng);
     this.marker.setPosition(latLng);
-    this.origen = latLng; 
+    this.origen = latLng;
   }
 }
-

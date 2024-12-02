@@ -1,4 +1,5 @@
 <ion-app>
+  <!-- Menú lateraaaaaaaaaaal -->
   <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar color="tertiary">
@@ -16,6 +17,7 @@
   </ion-menu>
 
   <div class="ion-page" id="main-content">
+
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -26,19 +28,35 @@
     </ion-header>
 
     <ion-content>
+    
       <ion-searchbar
         placeholder="Buscar ubicación..."
         [(ngModel)]="searchQuery"
         (ionInput)="buscarLugar($event)"
       ></ion-searchbar>
 
+  
       <ion-list *ngIf="predictions.length > 0">
         <ion-item *ngFor="let prediction of predictions" (click)="seleccionarLugar(prediction)">
           {{ prediction.description }}
         </ion-item>
       </ion-list>
 
-      <div id="map" style="width: 100%; height: calc(100% - 60px);"></div>
+  
+      <div id="map" style="width: 100%; height: calc(100% - 120px);"></div>
+
+   
+      <div style="padding: 15px; background-color: #f4f4f4; border-top: 1px solid #ccc;">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Información de la Ruta</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Tiempo estimado:</strong> {{ tiempoEstimado }}</p>
+            <p><strong>Costo estimado:</strong> ${{ costoEstimado }}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
 
       <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="centrarUbicacion()">
@@ -48,3 +66,4 @@
     </ion-content>
   </div>
 </ion-app>
+
