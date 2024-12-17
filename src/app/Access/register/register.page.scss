@@ -1,109 +1,50 @@
-/* Contenedor principal */
-#container {
-  text-align: center;
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   padding: 15px;
 }
 
-/* Título de la tarjeta */
-ion-card-title {
-  font-size: 2.8em;
-  font-weight: bold;
-  color: #00478f; /* Azul oscuro */
-  margin-bottom: 10px;
-}
-
-/* Subtítulo */
-ion-card-subtitle {
-  font-size: 1.5em;
-  color: #666666;
-  margin-bottom: 20px;
-}
-
-
-
-/* Iconos en los campos */
-ion-icon {
-  color: #ffd700; /* Amarillo */
-}
-
-/* Estilo de los campos de entrada */
-ion-input {
-  --padding-start: 10px;
-  font-size: 1em;
-}
-
-/* Ajuste del ion-item que contiene el checkbox y el enlace */
-ion-item.terminos-item {
-  background-color: transparent; /* Asegura que no tenga un fondo oscuro */
-  margin-top: 10px;
-  margin-bottom: 10px;
+.logo-container {
   display: flex;
-  align-items: center;
-  color: #ffffff; /* Texto blanco si el fondo es oscuro */
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
-/* Estilo del ion-checkbox */
-ion-checkbox {
-  --background: #ffd700; /* Amarillo */
-  --border-radius: 5px;
-  --size: 24px;
-  margin-right: 10px;
+.logo-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff69b4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el texto de términos y condiciones */
-ion-label {
-  color: #ffffff; /* Blanco para destacar en fondos oscuros */
-  font-size: 1em;
-  font-weight: 500;
+ion-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-ion-label a {
-  color: #ffffff; /* Blanco para que sea visible sobre el fondo oscuro */
-  text-decoration: underline;
-  transition: color 0.2s;
-  font-size: 1em; /* Tamaño adecuado para la legibilidad */
+ion-card-title {
+  font-size: 1.5em;
+  color: #ff69b4;
+  text-align: center;
 }
 
-ion-label a:hover {
-  color: #ffd700; /* Cambia a amarillo al pasar el cursor */
+ion-card-content {
+  padding: 10px 15px;
 }
 
-/* Botón Registrar */
-.button-registrar {
-  margin-top: 15px;
-  font-size: 1.1em;
+ion-item {
+  margin-bottom: 10px;
+  --background: #292929;
+  border-radius: 8px;
+}
+
+ion-button {
+  margin-top: 10px;
   font-weight: bold;
-  border-radius: 10px;
-  --background: #003366; /* Azul oscuro */
-  --color: #ffffff; /* Texto blanco */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
-}
-
-.button-registrar:hover {
-  transform: scale(1.05);
-}
-
-.button-registrar:active {
-  transform: scale(0.95);
-}
-
-/* Botón Volver */
-.button-volver {
-  margin-top: 15px;
-  font-size: 1.1em;
-  font-weight: bold;
-  border-radius: 20px;
-  --background: #ffd700; /* Amarillo */
-  --color: #003366; /* Texto azul oscuro */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
-}
-
-.button-volver:hover {
-  transform: scale(1.05);
-}
-
-.button-volver:active {
-  transform: scale(0.95);
 }

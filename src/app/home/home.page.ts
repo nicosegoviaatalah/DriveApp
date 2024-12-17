@@ -34,12 +34,10 @@ export class HomePage {
     const animacion = this.animationController
       .create()
       .addElement(loginIcon)
-      .duration(4000)
+      .duration(2000)
       .iterations(Infinity)
       .keyframes([
-        { offset: 0, transform: 'translateX(0px)', opacity: '1' },
-        { offset: 0.5, transform: 'translateX(100px)', opacity: '0.5' },
-        { offset: 1, transform: 'translateX(0px)', opacity: '1' },
+        { offset: 0, transform: 'translateX(0px)', opacity: '0' },
       ]);
   
     animacion.play();

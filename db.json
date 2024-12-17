@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "username": "j.riquelmee",
+      "username": "danaheGM",
       "email": "correo@correo.cl",
-      "password": "pass1234"
+      "password": "pass12345678"
     },
     {
-      "username": "z.test",
+      "username": "DanaheGM",
       "email": "email@gmail.com",
       "password": "password1234"
     },
     {
-      "username": "i.prueba",
+      "username": "DanaheGM",
       "email": "prueba@outlook.com",
       "password": "contraseña"
     }

@@ -1,98 +1,88 @@
-/* Estilos generales para el contenedor */
 #container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Estilo del título de bienvenida */
-  ion-card-title h1 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #003366; /* Azul oscuro */
-    margin-bottom: 10px;
-  }
-  
-  /* Estilo del subtítulo */
-  ion-card-subtitle {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #666666;
-    margin-top: 10px;
-  }
-  
-  /* Estilos para el formulario */
-  ion-item {
-    margin-top: 10px;
-  }
-  
-  ion-label {
-    color: #333333;
-  }
-  
-  ion-input {
-    --padding-start: 10px;
-    font-size: 1em;
-  }
-  
-  /* Estilo para el botón de Aceptar */
-  ion-button[color="success"] {
-    margin-top: 20px;
-    height: 50px;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 8px;
-    --background: #FFD700; /* Amarillo */
-    --color: #000000; /* Texto negro */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-  }
-  
-  /* Efecto de hover y clic para el botón de Aceptar */
-  ion-button[color="success"]:hover {
-    transform: scale(1.05);
-  }
-  
-  ion-button[color="success"]:active {
-    transform: scale(0.95);
-  }
+  text-align: center;
+  padding: 20px;
+}
 
-  /* Estilo del menú */
+ion-card-title h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #c71585;
+  margin-bottom: 10px;
+}
+
+ion-card-subtitle {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #d87093;
+  margin-top: 10px;
+}
+
+ion-item {
+  margin-top: 10px;
+}
+
+ion-label {
+  color: #db7093;
+}
+
+ion-input {
+  --padding-start: 10px;
+  font-size: 1em;
+}
+
+ion-button[color="success"] {
+  margin-top: 20px;
+  height: 50px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  --background: #ff69b4;
+  --color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+ion-button[color="success"]:hover {
+  transform: scale(1.05);
+}
+
+ion-button[color="success"]:active {
+  transform: scale(0.95);
+}
+
 ion-menu::part(backdrop) {
-  background-color: rgba(214, 200, 0, 0.18); /* Fondo magenta semitransparente */
+  background-color: rgba(255, 182, 193, 0.3);
 }
 
 ion-menu::part(container) {
-  border-radius: 0 20px 20px 0; /* Bordes redondeados en el lado derecho */
-  box-shadow: 4px 0px 16px rgba(214, 200, 0, 0.18); /* Sombra para darle profundidad */
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(255, 182, 193, 0.3);
 }
 
-/* Estilo de los ítems del menú */
 ion-item {
-  --color: #ffffff; /* Texto blanco */
+  --color: #ffffff;
   --background: transparent;
 }
 
 ion-item:hover {
-  --background: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente al pasar el mouse */
+  --background: rgba(255, 182, 193, 0.2);
 }
 
-/* Estilo del contenido principal */
 .ion-padding {
-  background-color: #f2f2f2; /* Fondo gris claro */
+  background-color: #ffe4e9;
 }
 
 ion-title {
-  color: #ffd700; /* Título en amarillo */
+  color: #ff1493;
 }
 
-ion-card-title, ion-card-subtitle {
-  color: #003366; /* Azul oscuro para los títulos */
+ion-card-title,
+ion-card-subtitle {
+  color: #ff1493;
 }
 
 ion-card {
-  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  background-color: #fff0f5;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-  

@@ -1,69 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+    <ion-title slot="start">Registro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/home']">Inicio</ion-button>
     </ion-buttons>
-    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Página de Registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div id="container">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="register-container">
     <ion-card>
+      <div class="logo-container">
+        <img src="./assets/img/logopink.jpg" alt="Logo" class="logo-img" />
+      </div>
       <ion-card-header>
-        <ion-card-title>Bienvenido al Registro</ion-card-title>
-        <ion-card-subtitle id="subsubtitulo">TellevoApp no compartirá tu informacion</ion-card-subtitle>
-        <ion-card-subtitle>Por favor, ingresa tus datos para crear una cuenta</ion-card-subtitle>
+        <ion-card-title>Crear Cuenta</ion-card-title>
       </ion-card-header>
+
       <ion-card-content>
         <ion-list>
           <ion-item>
-            <ion-icon name="person-outline" slot="start"></ion-icon>
-            <ion-input
-              [(ngModel)]="user.username"
-              label="Usuario"
-              labelPlacement="floating"
-              placeholder="Ingrese su usuario"
-            ></ion-input>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input [(ngModel)]="user.username" placeholder="Ingresa tu usuario"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label position="floating">Correo Electrónico</ion-label>
             <ion-input
               [(ngModel)]="user.email"
-              label="Correo"
-              labelPlacement="floating"
-              placeholder="Ingrese su correo"
+              placeholder="Ingresa tu correo"
+              type="email"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-label position="floating">Contraseña</ion-label>
             <ion-input
               [(ngModel)]="user.password"
-              label="Contraseña"
-              labelPlacement="floating"
+              placeholder="Ingresa tu contraseña"
               type="password"
-              placeholder="Ingrese su contraseña"
             ></ion-input>
           </ion-item>
-          <ion-item class="terminos-item" lines="none">
+          <ion-item lines="none">
             <ion-checkbox [(ngModel)]="aceptaTerminos" slot="start"></ion-checkbox>
-            <ion-label>
-              Acepto los 
-              <a [routerLink]="['/terminos']">términos y condiciones</a>
-            </ion-label>
+            <ion-label>Acepto los <a href="#">términos y condiciones</a></ion-label>
           </ion-item>
-          <ion-button expand="block" (click)="registrar()" color="primary" class="button-registrar" [disabled]="!aceptaTerminos">
-            Registrar
-          </ion-button>
-          <ion-button expand="block" [routerLink]="['/home']" color="secondary" class="button-volver">
-            Volver
-          </ion-button>
         </ion-list>
+
+        <ion-button expand="block" color="primary" (click)="registrar()">Registrar</ion-button>
+        <ion-button expand="block" fill="clear" [routerLink]="['/login']">¿Ya tienes cuenta? Inicia sesión</ion-button>
       </ion-card-content>
     </ion-card>
   </div>

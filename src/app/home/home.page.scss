@@ -1,155 +1,127 @@
-#container #carga {
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: fit-content;
-  padding-top: 5px;
-  padding-bottom: 15px;
-  color: #003366;
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  padding: 10px;
+  background: #fdf2f8;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 
-#container .login img {
+.logo-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #003366; 
-  margin-top: 15px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 4px solid #ffb3e6;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-#container .login img:hover {
-  transform: scale(1.1); 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+.logo-img:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
 }
 
-
-ion-button[fill="outline"] {
-  --background: #FFD700;
-  --border-color: #ffd700;
-  --color: #000000;
-  margin-top: 10px;
-  font-size: 1.1em;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-
-ion-button[fill="outline"]:hover {
-  transform: translateY(-3px); 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
-}
-
-ion-button[fill="outline"]:active {
-  transform: scale(0.98); 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-ion-card {
-  background-color: #ffffff;
-  border: 1px solid #003366;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+.card-registro {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
 }
-
 
 ion-card-title {
-  font-size: 1.5em;
-  color: #FFD700;
+  color: #ff69b4;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
 ion-card-subtitle {
-  font-size: 3.2em;
-  color: #666666;
-  margin-bottom: 20px;
+  color: #bbbbbb;
+  font-size: 1.1em;
+  margin-bottom: 15px;
 }
 
-
-ion-label {
-  color: #FFD700;
-  font-weight: bold;
+.input-field {
+  background-color: #3a3a3a;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 ion-input {
-  --padding-start: 10px;
+  --color: #ffffff;
+  --placeholder-color: #bbbbbb;
   font-size: 1em;
 }
 
-
-ion-text a {
-  color: #003366;
-  font-weight: bold;
-  text-decoration: underline;
-  transition: color 0.2s;
+ion-icon {
+  color: #ffb3e6;
+  font-size: 1.2em;
 }
 
-ion-text a:hover {
-  color: #FFD700;
+.toggle-carga {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
-
-
-ion-text a {
+.spinner-label {
   color: #ffffff;
+  font-size: 1em;
   font-weight: bold;
-  text-decoration: underline;
-  transition: color 0.2s;
 }
 
+.button-group ion-button {
+  margin: 10px 0;
+  border-radius: 20px;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+ion-button[color="danger"] {
+  --background: #ff69b4;
+  --color: #ffffff;
+}
+
+ion-button[color="danger"]:hover {
+  transform: scale(1.05);
+  background: #ff1493;
+}
+
+ion-button[color="secondary"] {
+  --background: #ffb3e6;
+  --color: #ffffff;
+}
+
+ion-button[color="secondary"]:hover {
+  transform: scale(1.05);
+  background: #ff69b4;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+ion-text a {
+  color: #ff69b4;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
 ion-text a:hover {
-  color: #ff0000; 
+  color: #ff1493;
+  text-decoration: underline;
 }
-
-
-
-ion-item {
-  --background: #1a1a1a; 
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-ion-input {
-  --color: #ffffff; 
-  --placeholder-color: #666666; 
-  font-size: 1em;
-}
-
-ion-toggle {
-  --handle-background: #ffd700; 
-  --background: #ffd700; 
-  --background-checked: #003366; 
-}
-
-
-ion-label {
-  color: #ff0000; 
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
-
-#carga ion-label {
-  color: #fcfcfc; 
-}
-
-mat-spinner {
-  --color: #003366; 
-}
-
-ion-button[fill="outline"]:hover {
-  transform: scale(1.05);
-}
-
-ion-button[fill="outline"]:active {
-  transform: scale(0.95);
-}
-
-
